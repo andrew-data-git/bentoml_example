@@ -1,0 +1,18 @@
+service: 'service:iris_service' # same as arg parsed into bentoml serving script
+labels: 
+  owner: andrew
+  stage: dev
+include:
+  - '*.py'
+exclude:
+  - '*.ipynb'
+  - '*.md'
+  - '.git*'
+  - '.venv'
+models:
+  - 'iris-svc-mlflow:latest'
+python:
+  packages:
+    - numpy
+  no_index: false
+  lock_packages: false
